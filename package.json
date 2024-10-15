@@ -12,6 +12,8 @@
     "babel-plugin-react-compiler": "^0.0.0-experimental-fa06e2c-20241014",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "firebase": "^10.14.1",
+    "firebase-admin": "^12.6.0",
     "next": "^15.0.0-rc.0",
     "react": "^19.0.0-rc-6cf85185-20241014",
     "react-dom": "^19.0.0-rc-6cf85185-20241014",
