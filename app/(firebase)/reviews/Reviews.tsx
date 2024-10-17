@@ -3,7 +3,7 @@
 import _ from 'lodash'
 
 import { AuthenticatedClientWrapper } from '@/app/components/Wrappers'
-import { useFirestoreReads } from '@/app/lib/firebase/firestoreReads'
+import { useFirestoreReads } from '@/app/lib/firebase/useFirestoreReads'
 import type { Review } from '@/app/types/addtional'
 
 const ReviewCard = ({ review }: { review: Review }) => (
