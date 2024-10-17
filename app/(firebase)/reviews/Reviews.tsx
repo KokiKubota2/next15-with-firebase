@@ -4,6 +4,7 @@ import _ from 'lodash'
 
 import { AuthenticatedClientWrapper } from '@/app/components/Wrappers'
 import { useFirestoreReads } from '@/app/lib/firebase/useFirestoreReads'
+import { formatTimestamp } from '@/app/lib/utils'
 import type { Review } from '@/app/types/addtional'
 
 const ReviewCard = ({ review }: { review: Review }) => (
@@ -12,7 +13,7 @@ const ReviewCard = ({ review }: { review: Review }) => (
     <div className='text-sm whitespace-pre-wrap'>{review.comment}</div>
     <div className='text-xs opacity-70 text-right'>{review.createdBy}</div>
     <div className='text-xs opacity-70 text-right'>
-      {review.createdAt.toFormat('yyyy-MM-dd HH:mm')}
+      {formatTimestamp(review.createdAt)}
     </div>
   </div>
 )

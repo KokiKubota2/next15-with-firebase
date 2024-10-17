@@ -12,9 +12,13 @@ const P = async () => {
         <h1 className='mb-2'>Authed Page</h1>
         <p className='mb-2'>{currentUser.uid}</p>
       </div>
-      <div>
+      <div className='flex flex-col gap-2'>
         <Link href='/reviews' className='underline text-blue-500'>
-          /reviews
+          /reviews (client)
+        </Link>
+
+        <Link href='/products' className='underline text-blue-500'>
+          /products (server)
         </Link>
       </div>
       <SignOutButton />

@@ -163,6 +163,7 @@ const getDocCount = (path: string, conditions: QueryCondition[]) => {
 }
 
 export const firestoreOperations = {
+  convertTimestampToDateTime,
   queryDocSnapToObj,
   querySnapToObj,
   getById<T>(path: string) {

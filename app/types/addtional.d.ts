@@ -14,3 +14,10 @@ export type Review = {
   createdAt: DateTime
   createdBy: string
 }
+
+export type Product = {
+  name: string
+  price: number
+  createdAt: DateTime
+  createdBy: string
+}

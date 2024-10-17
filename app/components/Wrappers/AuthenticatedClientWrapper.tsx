@@ -19,7 +19,7 @@ const C = ({ children }: { children: ReactNode }) => {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
+      <Suspense fallback={<>Loading...</>}>{children}</Suspense>
     </QueryClientProvider>
   )
 }
