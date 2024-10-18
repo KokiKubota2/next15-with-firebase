@@ -5,7 +5,10 @@ import { FieldValue } from 'firebase-admin/firestore'
 import { db, getCurrentUser } from '@/app/lib/firebase/firebase-admin'
 import { CREATE_REVIEW_SCHEMA } from '@/app/lib/schema'
 
-import { withFirebaseAuth } from '@/app/lib/actions/middleware'
+import {
+  interpretRecaptcha,
+  withFirebaseAuth,
+} from '@/app/lib/actions/middleware'
 
 const createReviewHandler = async (
   prevState: { success: boolean; message: string } | null,
@@ -31,4 +34,6 @@ const createReviewHandler = async (
   return { success: true, message: docRef.id }
 }
 
-export const createReview = withFirebaseAuth(createReviewHandler)
+export const createReview = withFirebaseAuth(
+  interpretRecaptcha(createReviewHandler)
+)

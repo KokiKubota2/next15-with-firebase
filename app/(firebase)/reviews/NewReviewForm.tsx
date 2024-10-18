@@ -2,14 +2,26 @@
 
 import Form from 'next/form'
 import { useActionState, useEffect, useState } from 'react'
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3'
 
 import { Button, Input, TextArea } from '@/app/components'
+import { GoogleReCaptchaProvider } from '@/app/components/Wrappers'
 import { createReview } from '@/app/lib/actions/reviews/createReview'
-
 import { CREATE_REVIEW_SCHEMA } from '@/app/lib/schema'
 
-const C = () => {
-  const [formState, formAction, pending] = useActionState(createReview, null)
+const NewReviewsForm = () => {
+  const { executeRecaptcha } = useGoogleReCaptcha()
+
+  const onSubmit = async (prevState: string, formData: FormData) => {
+    if (!executeRecaptcha) return
+    const gRecaptchaToken = await executeRecaptcha('NEW_REVIEW')
+
+    formData.set('reCaptchaToken', gRecaptchaToken)
+
+    return createReview(prevState, formData)
+  }
+
+  const [formState, formAction, pending] = useActionState(onSubmit, null)
   const [formData, setFormData] = useState({ title: '', comment: '' })
   const [isValid, setIsValid] = useState(false)
 
@@ -61,5 +73,11 @@ const C = () => {
     </>
   )
 }
+
+const C = () => (
+  <GoogleReCaptchaProvider>
+    <NewReviewsForm />
+  </GoogleReCaptchaProvider>
+)
 
 export default C
