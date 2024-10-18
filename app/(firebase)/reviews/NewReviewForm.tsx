@@ -5,7 +5,7 @@ import { useActionState, useEffect, useState } from 'react'
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3'
 
 import { Button, Input, TextArea } from '@/app/components'
-import { GoogleReCaptchaProvider } from '@/app/components/Wrappers'
+import { GoogleReCaptchaProvider } from '@/app/components/wrappers'
 import { createReview } from '@/app/lib/actions/reviews/createReview'
 import { CREATE_REVIEW_SCHEMA } from '@/app/lib/schema'
 

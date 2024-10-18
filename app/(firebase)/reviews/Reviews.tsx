@@ -2,7 +2,7 @@
 
 import _ from 'lodash'
 
-import { AuthenticatedClientWrapper } from '@/app/components/Wrappers'
+import { AuthenticatedClientWrapper } from '@/app/components/wrappers'
 import { useFirestoreReads } from '@/app/lib/firebase/useFirestoreReads'
 import { formatTimestamp } from '@/app/lib/utils'
 import type { Review } from '@/app/types/addtional'
