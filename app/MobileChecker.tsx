@@ -1,7 +1,8 @@
 import { headers } from 'next/headers'
 
-const MobileChecker = ({ children }: { children: React.ReactNode }) => {
-  const userAgent = headers().get('user-agent') || ''
+const MobileChecker = async ({ children }: { children: React.ReactNode }) => {
+  const headersList = await headers()
+  const userAgent = headersList.get('user-agent') || ''
   const isMobileDevice = /Android|iPhone|iPad|iPod/i.test(userAgent)
 
   if (!isMobileDevice) {
