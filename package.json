@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@mapbox/mapbox-gl-geocoder": "^5.0.3",
     "axios": "^1.7.7",
     "babel-plugin-react-compiler": "^0.0.0-experimental-fa06e2c-20241014",
     "class-variance-authority": "^0.7.0",
@@ -17,6 +18,7 @@
     "firebase-admin": "^12.6.0",
     "lodash": "^4.17.21",
     "luxon": "^3.5.0",
+    "mapbox-gl": "^3.7.0",
     "next": "^15.0.0-rc.1",
     "numeral": "^2.0.6",
     "react": "^19.0.0-rc-83825814-20241015",
@@ -30,6 +32,8 @@
   "devDependencies": {
     "@types/lodash": "^4.17.10",
     "@types/luxon": "^3.4.2",
+    "@types/mapbox-gl": "^3.4.0",
+    "@types/mapbox__mapbox-gl-geocoder": "^5.0.0",
     "@types/node": "^20",
     "@types/numeral": "^2.0.5",
     "@types/react": "^18",

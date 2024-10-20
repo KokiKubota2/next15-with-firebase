@@ -20,6 +20,10 @@ const P = async () => {
         <Link href='/products' className='underline text-blue-500'>
           /products (server)
         </Link>
+
+        <Link href='/map' className='underline text-blue-500'>
+          /map
+        </Link>
       </div>
       <SignOutButton />
     </div>
