@@ -38,3 +38,4 @@ next-env.d.ts
 .env
 certificates
 .firebase/
+firebase-debug.log
